@@ -28,6 +28,10 @@
         "SIGN_BUT": "Return to sign in",
         "REG_BUT": "Register"
     },
+    "PASSWOR_INPUT": {
+        "SHOW_TEXT": "Show",
+        "HIDE_TEXT": "Hide"
+    },
     "NOT_FOUND": {
         "HEADER": "Page not found",
         "TEXT": "The page may have been removed, renamed, or you may have entered an incorrect address",

@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { TuiIcon, TuiTextfield } from '@taiga-ui/core';
+import { TranslateService } from '@ngx-translate/core';
+import { TUI_HINT_OPTIONS, TuiHintOptions, TuiIcon, TuiTextfield } from '@taiga-ui/core';
 import { TUI_PASSWORD_TEXTS, TuiPassword } from '@taiga-ui/kit';
-import { of } from 'rxjs';
+import { map, of } from 'rxjs';
 
 @Component({
   selector: 'ui-input-password',
@@ -12,8 +13,18 @@ import { of } from 'rxjs';
   providers: [
     {
       provide: TUI_PASSWORD_TEXTS,
-      useValue: of(['Показать', 'Скрыть']),
+      useFactory: (translate: TranslateService) =>
+        translate.stream('PASSWOR_INPUT').pipe(
+          map(translations => ([translations.SHOW_TEXT, translations.HIDE_TEXT]))
+        ),
+      deps: [TranslateService],
     },
+    {
+      provide: TUI_HINT_OPTIONS,
+      useValue: <Partial<TuiHintOptions>>{
+        direction: 'top-left'
+      }
+    }
   ],
 })
 export class UiInputPassword {
