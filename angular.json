@@ -30,7 +30,7 @@
               },
               {
                 "glob": "**/*",
-                "input": "src/app/shared/icons",
+                "input": "src/app/shared",
                 "output": "assets"
               },
               {

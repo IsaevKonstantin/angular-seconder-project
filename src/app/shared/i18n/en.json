@@ -1,5 +1,36 @@
 {
-    "MAIN": {
-        "TITLE": "SECONDER"
+    "TITLE": "SECONDER",
+    "LOGIN": {
+        "HEADER": "Authorization",
+        "LOG_INPUT": "Login",
+        "LOG_INPUT_PLACHOLDER": "Enter login",
+        "PASS_INPUT": "Password",
+        "PASS_INPUT_PLACHOLDER": "Enter password",
+        "SIGN_BUT": "Sign In",
+        "REG_BUT": "Registration"
+    },
+    "REGISTER": {
+        "HEADER": "Registration",
+        "LOG_INPUT": "Login",
+        "LOG_INPUT_PLACHOLDER": "Enter login",
+        "PASS_INPUT": "Password",
+        "PASS_INPUT_PLACHOLDER": "Enter password",
+        "PHONE_INPUT": "Phone number",
+        "PHONE_INPUT_PLACHOLDER": "Enter phone number",
+        "EMAIL_INPUT": "Email",
+        "EMAIL_INPUT_PLACHOLDER": "Enter email",
+        "FIRST_NAME_INPUT": "First name",
+        "FIRST_NAME_INPUT_PLACHOLDER": "Enter first name",
+        "LAST_NAME_INPUT": "Last name",
+        "LAST_NAME_INPUT_PLACHOLDER": "Enter last name",
+        "PATRONYMIC_INPUT": "Patronymic",
+        "PATRONYMIC_INPUT_PLACHOLDER": "Enter patronymic",
+        "SIGN_BUT": "Return to sign in",
+        "REG_BUT": "Register"
+    },
+    "NOT_FOUND": {
+        "HEADER": "Page not found",
+        "TEXT": "The page may have been removed, renamed, or you may have entered an incorrect address",
+        "GO_HOME_BUT": "Go home"
     }
 }

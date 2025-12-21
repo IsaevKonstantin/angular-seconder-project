@@ -4,7 +4,7 @@ import { App } from './app/app';
 import { provideRouter, withViewTransitions } from '@angular/router';
 import { routes } from './app/app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import { httpInterceptor } from './app/infrastructure/http/interceptors/interceptor';
+import { httpInterceptor } from './app/core/http/interceptors/interceptor';
 
 bootstrapApplication(App, {
   ...appConfig,

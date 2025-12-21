@@ -1,0 +1,13 @@
+<button
+    tuiButton
+    [size]="size"
+    [type]="type"
+    [loading]="isLoading"
+    [disabled]="isDisabled"
+    [iconStart]="iconStart"
+    [iconEnd]="iconEnd"
+    [appearance]="appearance"
+    (click)="clickEmitter($event)"
+>
+    <ng-content></ng-content>
+</button>
