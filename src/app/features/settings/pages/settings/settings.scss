@@ -1,0 +1,91 @@
+@use "../../../../shared/styles/colors.scss" as *;
+
+:host {
+  height: 100%;
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.card {
+  width: calc(100% - 32px);
+  background: $bg-card;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  border: 1px solid $border-light;
+}
+
+ui-input,
+ui-input-password,
+ui-input-phone {
+  height: 45px;
+}
+
+ui-textarea {
+  height: 105px;
+}
+
+ui-button {
+  height: 40px;
+}
+
+.btn {
+  width: 200px;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  &-body {
+    width: 100%;
+    display: grid;
+    grid-template-columns: calc(50% - 8px) 1fr;
+    gap: 16px;
+  }
+}
+
+.private {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.public {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+
+  &-icon {
+    width: 150px;
+    height: 150px;
+  }
+
+  &-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 10px;
+  }
+}
+
+.lang-switch {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+

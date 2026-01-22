@@ -1,0 +1,42 @@
+@use "../../../shared/styles/colors.scss" as *;
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 300px;
+    height: 300px;
+}
+
+.info {
+    width: calc(100% - 30px);
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    &-login {
+        color: $text-muted;
+    }
+
+    &-items {
+        height: 30px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    &-about {
+        width: 100%;
+        border-top: 1px solid $card-separator;
+    }
+}
+
+h2 {
+    margin: 0;
+}

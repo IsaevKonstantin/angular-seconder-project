@@ -1,0 +1,158 @@
+@use "../../../shared/styles/colors.scss" as *;
+
+:host {
+  display: flex;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  gap: 10px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  position: relative;
+  transition: border-color ease-in-out 0.3s;
+  border: 1px solid $border-light;
+  background-color: $bg-card;
+
+  &-s {
+    height: calc(100% - 12px);
+    width: calc(100% - 12px);
+    padding: 5px;
+  }
+
+  &-m {
+    height: calc(100% - 32px);
+    width: calc(100% - 32px);
+    padding: 15px;
+  }
+}
+
+.light-gray {
+  background-color: $light-gray;
+}
+
+.dark-gray {
+  background-color: $dark-gray;
+}
+
+.hover {
+  cursor: pointer;
+
+  &:hover {
+    border-color: $primary;
+  }
+}
+
+.contact {
+  display: flex;
+
+  &-m {
+    width: 180px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-right: 10px;
+    border-right: 1px solid $card-separator;
+  }
+
+  &-icon-s {
+    width: 50px;
+    height: 50px;
+  }
+
+  &-icon-m {
+    width: 100px;
+    height: 100px;
+  }
+
+  &-conection{
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &-conection-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+
+    &-m {
+      height: 160px;
+      width: calc(100% - 201px);
+    }
+
+    &-s {
+      justify-content: center;
+      width: calc(100% - 60px);
+    }
+  }
+
+  &-info-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+  }
+
+  &-info-data {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-info-data-row {
+    display: flex;
+    gap: 5px;
+  }
+
+  &-login {
+    color: $text-muted;
+  }
+}
+
+.action-container {
+  width: 30px;
+  height: 100%;
+}
+
+.badge {
+  position: absolute;
+  background: #ff5252;
+  color: $bg-card;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 12px;
+  left: 2px;
+  bottom: 2px;
+}
+
+.status {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid $bg-card;
+  background-color: $status-offline;
+  transition: background-color ease-in-out 0.3s;
+
+  &.online {
+    background-color: $status-online;
+  }
+}
+
+h2, h3 {
+  margin: 0;
+  white-space: nowrap;
+}
+
+ui-scrollbar {
+  overflow-y: auto;
+}

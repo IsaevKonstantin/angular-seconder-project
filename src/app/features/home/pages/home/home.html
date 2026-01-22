@@ -1,0 +1,211 @@
+<ui-scrollbar class="scrollbar">
+  <div class="container">
+    @let item = user();
+    <ui-user-card
+      class="user-card"
+      [user]="item"
+      size="m"
+    >
+      <div class="card-about-container">
+        <div class="card-about-content">
+          <ui-scrollbar>
+            <div class="card-about">
+              <span>{{ item && item.about ? item.about : "" }}</span>
+            </div>
+          </ui-scrollbar>
+        </div>
+      </div>
+    </ui-user-card>
+
+    <section class="card">
+      <div class="card-header">
+        <h3>{{ 'HOME.MY_CHATS' | translate }}</h3>
+        <ui-input
+          icon="assets/icons/message-icon.svg"
+          [isCleaner]="true"
+          size="m"
+          [label]="'HOME.CHAT_INPUT' | translate"
+          [placeholder]="'HOME.CHAT_INPUT_PLACHOLDER' | translate"
+          [inputControl]="form.controls.chats"
+        />
+      </div>
+
+      <div class="list">
+        @if (isLoading()) {
+          <ui-spinner></ui-spinner>
+        } @else {
+          <div class="list-items">
+            @let chatsArr = chats();
+            @if (chatsArr.length) {
+              @for (chat of chatsArr; track $index) {
+                <ui-contact-card
+                  class="list-item"
+                  [contact]="chat"
+                  backgroundColor="light_gray"
+                  [isOnlineShow]="true"
+                  [messageCount]="chat.unread"
+                  (click)="navigateToChat(chat)"
+                >
+                  <div contact-content class="message" tuiFade>
+                    @let message = lastMessageData(chat);
+                    <span class="message-item">{{ message.key | translate:message.params }}</span>
+                  </div>
+                </ui-contact-card>
+              }
+            } @else {
+              <div class="not-found">
+                <span>{{ 'HOME.CHATS_NOT_FOUND' | translate }}</span>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-header">
+        <h3>{{ 'HOME.MY_CONTACTS' | translate }}</h3>
+        <ui-input
+          icon="assets/icons/user-search-icon.svg"
+          [isCleaner]="true"
+          size="m"
+          [label]="'HOME.CONTACT_INPUT' | translate"
+          [placeholder]="'HOME.CONTACT_INPUT_PLACHOLDER' | translate"
+          [inputControl]="form.controls.contacts"
+        />
+      </div>
+
+      <div class="list">
+        @if (isLoading()) {
+          <ui-spinner></ui-spinner>
+        } @else {
+          @let friendsArr = friends();
+          <ui-single-accordion
+            [title]="'HOME.FRIENDS' | translate"
+            [isOpen]="!!friendsArr.length"
+          >
+            @if (friendsArr.length) {
+              <div class="list-items">
+                @for (friend of friendsArr; track $index) {
+                  <ui-contact-card
+                    class="list-item"
+                    [contact]="friend"
+                    backgroundColor="light_gray"
+                    [isOnlineShow]="true"
+                    [isLogin]="true"
+                    [isActions]="true"
+                    (click)="selectContact(friend)"
+                  >
+                    <div contact-action class="card-action" (click)="$event.stopPropagation()">
+                      <ui-button
+                        class="card-btn"
+                        appearance="icon"
+                        size="m"
+                        (click)="navigateToChat(friend)"
+                      >
+                        <img src="/assets/icons/chats-icon.svg">
+                      </ui-button>
+                    </div>
+                  </ui-contact-card>
+                }
+              </div>
+            } @else {
+              <div class="not-found">
+                <span>{{ 'HOME.FRIENDS_NOT_FOUND' | translate }}</span>
+              </div>
+            }
+          </ui-single-accordion>
+            
+          @let subscriptionsArr = subscriptions();
+          <ui-single-accordion
+            [title]="'HOME.SUBSCRIPTIONS' | translate"
+            [isOpen]="!!subscriptionsArr.length"
+          >
+            @if (subscriptionsArr.length) {
+              <div class="list-items">
+                @for (subsription of subscriptionsArr; track $index) {
+                  <ui-contact-card
+                    class="list-item"
+                    [contact]="subsription"
+                    backgroundColor="light_gray"
+                    [isOnlineShow]="true"
+                    [isLogin]="true"
+                    [isActions]="true"
+                    (click)="selectContact(subsription)"
+                  >
+                    <div contact-action class="card-action" (click)="$event.stopPropagation()">
+                      <ui-button
+                        class="card-btn"
+                        appearance="icon"
+                        size="m"
+                        (click)="navigateToChat(subsription)"
+                      >
+                        <img src="/assets/icons/chats-icon.svg">
+                      </ui-button>
+                    </div>
+                  </ui-contact-card>
+                }
+              </div>
+            } @else {
+              <div class="not-found">
+                <span>{{ 'HOME.SUBSCRIPTIONS_NOT_FOUND' | translate }}</span>
+              </div>
+            }
+          </ui-single-accordion>
+
+          @let subscribersArr = subscribers();
+          <ui-single-accordion
+            [title]="'HOME.SUBSCRIBERS' | translate"
+            [isOpen]="!!subscribersArr.length"
+          >
+            @if (subscribersArr.length) {
+              <div class="list-items">
+                @for (subscribe of subscribersArr; track $index) {
+                  <ui-contact-card
+                    class="list-item"
+                    [contact]="subscribe"
+                    backgroundColor="light_gray"
+                    [isOnlineShow]="true"
+                    [isLogin]="true"
+                    [isActions]="true"
+                    (click)="selectContact(subscribe)"
+                  >
+                    <div contact-action class="card-action" (click)="$event.stopPropagation()">
+                      <ui-button
+                        class="card-btn"
+                        appearance="icon"
+                        size="m"
+                        (click)="navigateToChat(subscribe)"
+                      >
+                        <img src="/assets/icons/chats-icon.svg">
+                      </ui-button>
+                    </div>
+                  </ui-contact-card>
+                }
+              </div>
+            } @else {
+              <div class="not-found">
+                <span>{{ 'HOME.SUBSCRIBERS_NOT_FOUND' | translate }}</span>
+              </div>
+            }
+          </ui-single-accordion>
+        }
+      </div>
+    </section>
+  </div>
+</ui-scrollbar>
+
+<tui-drawer *tuiPopup="!!selectedContact()" [overlay]="true">
+  <header class="drawer-header">
+    <ui-button
+      class="drawer-close-btn"
+      appearance="icon"
+      size="m"
+      (click)="selectContact(null)"
+    >
+      <img src="/assets/icons/close-icon.svg">
+    </ui-button>
+  </header>
+
+  <ui-contact-info-card [contact]="selectedContact()!"></ui-contact-info-card>
+</tui-drawer>

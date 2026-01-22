@@ -1,0 +1,9 @@
+<tui-badge
+    [appearance]="appearance"
+    [ngClass]="{
+        'status-online': statusColor === 'online',
+        'status-offline': statusColor === 'offline',
+    }"
+>
+    <ng-content />
+</tui-badge>

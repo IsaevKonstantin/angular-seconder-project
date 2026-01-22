@@ -1,0 +1,30 @@
+<div class="popup-card">
+    <div class="popup-header">
+        <tui-avatar
+            [src]="contact && contact.avatarBase64 ? contact.avatarBase64 : null"
+            size="l"
+            [round]="true"
+        ></tui-avatar>
+        <div class="popup-name">
+            <h2>{{ fullName }}</h2>
+            <span *ngIf="contact && contact.login" class="popup-login">{{ contact.login }}</span>
+        </div>
+        <span *ngIf="messageCount" class="popup-badge">{{ messageCount }}</span>
+        <span *ngIf="isOnlineShow && onlineStatus" class="popup-status online"></span>
+    </div>
+
+    <div class="popup-contact">
+        <div *ngIf="contact && contact.phone" class="popup-contact-item">
+            <img src="/assets/icons/phone-icon.svg" alt="phone" />
+            <span>{{ contact.phone }}</span>
+        </div>
+        <div *ngIf="contact && contact.email" class="popup-contact-item">
+            <img src="/assets/icons/email-icon.svg" alt="email" />
+            <span>{{ contact.email }}</span>
+        </div>
+    </div>
+
+    <div class="popup-actions">
+        <ng-content select="[popup-action]"></ng-content>
+    </div>
+</div>

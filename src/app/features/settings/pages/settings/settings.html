@@ -1,0 +1,134 @@
+<section class="card">
+<div class="settings">
+<div class="settings-body">
+    <div class="private">
+        <div class="avatar">
+            <ui-avatar
+                class="avatar-icon"
+                [src]="form.controls.avatar.value"
+                size="xxl"
+                [round]="false"
+            />
+
+            <div class="avatar-buttons">
+                <ui-button
+                    size="m"
+                    (click)="FileInput.click()"
+                >
+                    <img src="/assets/icons/upload-avatar-icon.svg">
+                </ui-button>
+                <ui-button
+                    appearance="primary-destructive"
+                    size="m"
+                    (click)="deleteAvatar()"
+                >
+                    <img src="/assets/icons/delete-avatar-icon.svg">
+                </ui-button>
+                <input
+                    #FileInput
+                    type="file"
+                    hidden accept="image/*"
+                    (change)="uploadAvatar($event)"
+                >
+            </div>
+        </div>
+
+        <span>{{ 'SETTINGS.PRIVATE_DATA' | translate }}</span>
+        <ui-input 
+            [isCleaner]="true"
+            size="m"
+            [label]="'SETTINGS.LOG_INPUT' | translate"
+            [placeholder]="'SETTINGS.LOG_INPUT_PLACHOLDER' | translate"
+            [inputControl]="form.controls.login"
+        />
+        <ui-input-password
+            [isCleaner]="true"
+            size="m"
+            [label]="'SETTINGS.CURRENT_PASS_INPUT' | translate"
+            [placeholder]="'SETTINGS.CURRENT_PASS_INPUT_PLACHOLDER' | translate"
+            autocomplete="new-password"
+            [inputPassControl]="form.controls.currentPassword"
+        />
+        <ui-input-password
+            [isCleaner]="true"
+            size="m"
+            [label]="'SETTINGS.NEW_PASS_INPUT' | translate"
+            [placeholder]="'SETTINGS.NEW_PASS_INPUT_PLACHOLDER' | translate"
+            autocomplete="new-password"
+            [inputPassControl]="form.controls.newPassword"
+        />
+    </div>
+    
+    <div class="public">
+        <span>{{ 'SETTINGS.PUBLIC_DATA' | translate }}</span>
+        <ui-input 
+            [isCleaner]="true"
+            size="m"
+            [label]="'SETTINGS.LAST_NAME_INPUT' | translate"
+            [placeholder]="'SETTINGS.LAST_NAME_INPUT_PLACHOLDER' | translate"
+            [inputControl]="form.controls.lastName"
+        />
+        <ui-input 
+            [isCleaner]="true"
+            size="m"
+            [label]="'SETTINGS.FIRST_NAME_INPUT' | translate"
+            [placeholder]="'SETTINGS.FIRST_NAME_INPUT_PLACHOLDER' | translate"
+            [inputControl]="form.controls.firstName"
+        />
+        <ui-input 
+            [isCleaner]="true"
+            size="m"
+            [label]="'SETTINGS.PATRONYMIC_INPUT' | translate"
+            [placeholder]="'SETTINGS.PATRONYMIC_INPUT_PLACHOLDER' | translate"
+            [inputControl]="form.controls.patronymic"
+        />
+        <ui-input-phone 
+            [isCleaner]="true"
+            size="m"
+            [label]="'SETTINGS.PHONE_INPUT' | translate"
+            [placeholder]="'SETTINGS.PHONE_INPUT_PLACHOLDER' | translate"
+            [inputControl]="form.controls.phone"
+        />
+        <ui-input 
+            [isCleaner]="true"
+            size="m"
+            [label]="'SETTINGS.EMAIL_INPUT' | translate"
+            [placeholder]="'SETTINGS.EMAIL_INPUT_PLACHOLDER' | translate"
+            type="email"
+            autocomplete="on"
+            [inputControl]="form.controls.email"
+        />
+        <ui-textarea
+            [isCleaner]="true"
+            size="m"
+            [label]="'SETTINGS.ABOUT_TEXTAREA' | translate"
+            [placeholder]="'SETTINGS.ABOUT_TEXTAREA_PLACHOLDER' | translate"
+            [textareaControl]="form.controls.about"
+        />
+    </div>
+</div>
+
+<div class="lang-switch">
+    <ui-language-group />
+</div>
+
+<ui-button
+    class="btn"
+    appearance="primary"
+    size="m"
+    [isDisabled]="!form.dirty || form.invalid"
+    (click)="saveSettings()"
+>
+    {{ 'SETTINGS.SAVE_BUT' | translate }}
+</ui-button>
+
+<ui-button
+    class="btn"
+    appearance="primary-destructive"
+    size="m"
+    (click)="logOut()"
+>
+    {{ 'SETTINGS.LOG_OUT_BUT' | translate }}
+</ui-button>
+</div>
+</section>

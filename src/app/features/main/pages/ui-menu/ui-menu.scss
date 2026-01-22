@@ -1,0 +1,25 @@
+:host {
+    height: 100%;
+}
+
+.menu {
+    &-trigger {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: space-between;
+    }
+
+    &-button {
+        height: 40px;
+    }
+
+    &-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 20px;
+    }
+}

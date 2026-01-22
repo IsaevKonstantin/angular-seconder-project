@@ -1,0 +1,55 @@
+<section 
+  class="card"
+  [ngClass]="{
+    'card-s': size === 's',
+    'card-m': size === 'm',
+  }"
+>
+    <div
+        class="left"
+        [ngClass]="{'left-m': size === 'm'}"
+    >
+        <ui-avatar
+            [ngClass]="{
+                'icon-s': size === 's',
+                'icon-m': size === 'm',
+            }"
+            [src]="user && user.avatarBase64 ? user.avatarBase64 : null"
+            size="xxl"
+            [round]="false"
+        />
+
+        @if (size === 'm') {
+            <div class="conection">
+                <div class="conection-item">
+                    <img src="/assets/icons/phone-icon.svg">
+                    <span>{{ user && user.phone ? user.phone : "" }}</span>
+                </div>
+                <div class="conection-item">
+                    <img src="/assets/icons/email-icon.svg">
+                    <span>{{ user && user.email ? user.email : "" }}</span> 
+                </div>
+            </div>
+        }
+    </div>
+
+    <div
+        class="right"
+        [ngClass]="{
+            'right-s': size === 's',
+            'right-m': size === 'm',
+        }"
+    >
+        <div class="info" tuiFade>
+            @if (size === 'm') {
+                <h2>{{ UserFLP }}</h2>
+            }
+            @if (size === 's') {
+                <h3>{{ UserFLP }}</h3>
+            }
+            <span class="info-login">{{ user && user.login ? user.login : "" }}</span>
+        </div>
+
+        <ng-content />
+    </div>
+</section>

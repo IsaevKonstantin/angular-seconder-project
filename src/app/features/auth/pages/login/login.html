@@ -1,0 +1,49 @@
+<section class="container">
+  <div class="header">
+    <img src="/assets/icons/seconder-icon.svg">
+    <h1>{{ "TITLE" | translate }}</h1>
+  </div>
+
+  <section class="login">
+    <h2>{{ "LOGIN.HEADER" | translate }}</h2>
+    <ui-input 
+      class="width"
+      [isCleaner]="true"
+      size="m"
+      [label]="'LOGIN.LOG_INPUT' | translate"
+      [placeholder]="'LOGIN.LOG_INPUT_PLACHOLDER' | translate"
+      type="username"
+      [inputControl]="form.controls.login"
+    />
+
+    <ui-input-password
+      class="width"
+      [isCleaner]="true"
+      size="m"
+      [label]="'LOGIN.PASS_INPUT' | translate"
+      [placeholder]="'LOGIN.PASS_INPUT_PLACHOLDER' | translate"
+      [inputPassControl]="form.controls.password"
+    />
+
+    <ui-button
+      class="width"
+      appearance="primary" 
+      size="m" 
+      [isDisabled]="form.invalid"
+      (click)="signIn()"
+    >
+      {{ 'LOGIN.SIGN_BUT' | translate }}
+    </ui-button>
+
+    <ui-button
+      class="width"
+      appearance="outline"
+      size="m" 
+      (click)="goRegister()"
+    >
+      {{ 'LOGIN.REG_BUT' | translate }}
+    </ui-button>
+
+    <ui-language-group />
+  </section>
+</section>

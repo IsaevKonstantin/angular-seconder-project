@@ -3,6 +3,7 @@ import { provideAnimations } from "@angular/platform-browser/animations";
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideTranslateHttpLoader, TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { provideStore } from '@ngrx/store';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { provideEventPlugins } from "@taiga-ui/event-plugins";
@@ -14,6 +15,7 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideEventPlugins(),
+    provideStore(),
     provideTranslateHttpLoader({
       prefix: '/assets/i18n/',
       suffix: '.json',
