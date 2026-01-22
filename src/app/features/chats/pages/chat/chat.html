@@ -1,0 +1,166 @@
+@let item = contact();
+@if (item) {
+    <div class="chat">
+        <ui-contact-card
+            [contact]="item"
+            [isFio]="true"
+            [isActions]="true"
+            [isLogin]="true"
+            [isBadge]="true"
+            (click)="open.set(!open())"
+        >
+            <ui-dropdown-menu 
+                contact-action
+                class="card-action" 
+                appearance="icon" 
+                horizontalDirection="left" 
+                [sided]="true" 
+                [offset]="-10" 
+                (click)="$event.stopPropagation()"
+            >
+                <div menu-trigger>
+                    <img src="/assets/icons/ellipsis-icon.svg">
+                </div>
+
+                <ng-container menu-items>
+                    <div>
+                        @if (canAdd()) {
+                            <ui-button
+                                tuiOption
+                                uiDropdownClose
+                                class="card-btn"
+                                appearance="outline"
+                                size="m"
+                                (click)="addContact(item)"
+                            >
+                                <div class="card-item">
+                                    <img src="/assets/icons/user-add-icon.svg">
+                                    <span>{{ "CHAT.ADD_BTN" | translate }}</span>
+                                </div>
+                            </ui-button>
+                        }
+
+                        @if (canDelete()) {
+                            <ui-button
+                                tuiOption
+                                uiDropdownClose
+                                class="card-btn"
+                                appearance="outline"
+                                size="m"
+                                (click)="deleteFriend(item)"
+                            >
+                                <div class="card-item">
+                                    <img src="/assets/icons/user-delete-icon.svg">
+                                    <span>{{ "CHAT.DELETE_BTN" | translate }}</span>
+                                </div>
+                            </ui-button>
+                        }
+
+                        @if (canCancel()) {
+                            <ui-button
+                                tuiOption
+                                uiDropdownClose
+                                class="card-btn"
+                                appearance="outline"
+                                size="m"
+                                (click)="cancelContact(item)"
+                            >
+                                <div class="card-item">
+                                    <img src="/assets/icons/user-cancel-icon.svg">
+                                    <span>{{ "CHAT.CANCEL_BTN" | translate }}</span>
+                                </div>
+                            </ui-button>
+                        }
+
+                        @if (canApprove()) {
+                            <ui-button
+                                tuiOption
+                                uiDropdownClose
+                                class="card-btn"
+                                appearance="outline"
+                                size="m"
+                                (click)="aproveContact(item)"
+                            >
+                                <div class="card-item">
+                                    <img src="/assets/icons/user-approve-icon.svg">
+                                    <span>{{ "CHAT.CONFIRM_BTN" | translate }}</span>
+                                </div>
+                            </ui-button>
+                        }
+                            
+                        <ui-button
+                            tuiOption
+                            uiDropdownClose
+                            class="card-btn"
+                            appearance="outline"
+                            size="m"
+                            (click)="blockContact(item)"
+                        >
+                            <div class="card-item">
+                                <img src="/assets/icons/user-block-icon.svg">
+                                <span>{{ "CHAT.BLOCK_BTN" | translate }}</span>
+                            </div>
+                        </ui-button>
+                    </div>
+                </ng-container>
+            </ui-dropdown-menu>
+        </ui-contact-card>
+
+        <tui-drawer *tuiPopup="open()" [overlay]="true">
+            <header class="drawer-header">
+                <ui-button
+                    class="drawer-close-btn"
+                    appearance="icon"
+                    size="m"
+                    (click)="open.set(false)"
+                >
+                    <img src="/assets/icons/close-icon.svg">
+                </ui-button>
+            </header>
+
+            <ui-contact-info-card [contact]="contact()!"></ui-contact-info-card>
+        </tui-drawer>
+
+        <section class="chat-container">
+
+            <div class="chat-messages">
+                @for (message of messages(); track $index) {
+                    @if (message.fromUserId === user().id) {
+                        <div tuiComment="right" class="message message-mine">
+                            <span class="message-text">{{ message.content }}</span>
+                            <small>{{ message.timestamp | date:'HH:mm' }}</small>
+                        </div>
+                    } @else {
+                        <div tuiComment="left" class="message">
+                            <span class="message-text">{{ message.content }}</span>
+                            <small>{{ message.timestamp | date:'HH:mm' }}</small>
+                        </div>
+                    }
+                }
+            </div>
+
+            <div class="chat-input">
+                <ui-input
+                    type="text"
+                    size="m"
+                    [label]="'CHAT.MESSAGE_INPUT' | translate"
+                    [placeholder]="'CHAT.MESSAGE_INPUT_PLACHOLDER' | translate"
+                    [inputControl]="messageControl"
+                    (keydown.enter)="send()"
+                />
+                <ui-button
+                    appearance="primary"
+                    [isDisabled]="!messageControl.valid"
+                    (click)="send()"
+                >
+                    {{ "CHAT.SEND_BTN" | translate }}
+                </ui-button>
+            </div>
+
+        </section>
+    </div>
+} @else {
+    <div class="not-found">
+        <span>{{ "CHAT.CONTACT_NOT_FOUND" | translate }}</span>
+    </div>
+}

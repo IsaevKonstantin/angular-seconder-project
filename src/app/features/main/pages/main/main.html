@@ -1,0 +1,38 @@
+<div class="main">
+  <div class="left">
+    <div class="title" routerLink="home">
+      <img src="/assets/icons/seconder-icon.svg">
+      <h1>{{ "TITLE" | translate }}</h1>
+    </div>
+  </div>
+  <section class="middle">
+    <section class="header">
+      <div class="header-left">
+        <ui-menu />
+      </div>
+
+      <div class="header-right">
+        <ui-button
+          appearance="icon"
+          routerLink="settings"
+        >
+          <img src="/assets/icons/settings-icon.svg">
+        </ui-button>
+
+        <ui-button
+          appearance="icon"
+          (click)="logOut()"
+        >
+          <img src="/assets/icons/log-out-icon.svg">
+        </ui-button>
+      </div>
+    </section>
+    <div class="content">
+      <router-outlet />
+    </div>
+  </section>
+  <div class="right"></div>
+</div>
+
+
+

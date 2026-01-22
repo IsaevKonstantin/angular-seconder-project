@@ -1,0 +1,15 @@
+<tui-textfield 
+    [tuiTextfieldSize]="size" 
+    [tuiTextfieldCleaner]="isCleaner" 
+    [iconStart]="icon"
+>
+    <label tuiLabel>{{ label }}</label>
+    <input
+        tuiTextfield
+        [type]="type"
+        [placeholder]="placeholder"
+        [formControl]="inputControl"
+        [name]="type"
+        [autocomplete]="autocomplete"
+    />
+</tui-textfield>

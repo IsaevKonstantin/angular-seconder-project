@@ -1,0 +1,127 @@
+{
+    "TITLE": "SECONDER",
+    "LOGIN": {
+        "HEADER": "Authorization",
+        "LOG_INPUT": "Login",
+        "LOG_INPUT_PLACHOLDER": "Enter login",
+        "PASS_INPUT": "Password",
+        "PASS_INPUT_PLACHOLDER": "Enter password",
+        "SIGN_BUT": "Sign In",
+        "REG_BUT": "Registration"
+    },
+    "REGISTER": {
+        "HEADER": "Registration",
+        "LOG_INPUT": "Login",
+        "LOG_INPUT_PLACHOLDER": "Enter login",
+        "PASS_INPUT": "Password",
+        "PASS_INPUT_PLACHOLDER": "Enter password",
+        "PHONE_INPUT": "Phone number",
+        "PHONE_INPUT_PLACHOLDER": "Enter phone number",
+        "EMAIL_INPUT": "Email",
+        "EMAIL_INPUT_PLACHOLDER": "Enter email",
+        "FIRST_NAME_INPUT": "First name",
+        "FIRST_NAME_INPUT_PLACHOLDER": "Enter first name",
+        "LAST_NAME_INPUT": "Last name",
+        "LAST_NAME_INPUT_PLACHOLDER": "Enter last name",
+        "PATRONYMIC_INPUT": "Patronymic",
+        "PATRONYMIC_INPUT_PLACHOLDER": "Enter patronymic",
+        "SIGN_BUT": "Return to sign in",
+        "REG_BUT": "Register"
+    },
+    "PASSWOR_INPUT": {
+        "SHOW_TEXT": "Show",
+        "HIDE_TEXT": "Hide"
+    },
+    "NOT_FOUND": {
+        "HEADER": "Page not found",
+        "TEXT": "The page may have been removed, renamed, or you may have entered an incorrect address",
+        "GO_HOME_BUT": "Go home"
+    },
+    "SETTINGS": {
+        "LOG_INPUT": "Login",
+        "LOG_INPUT_PLACHOLDER": "Enter login",
+        "CURRENT_PASS_INPUT": "Current password",
+        "CURRENT_PASS_INPUT_PLACHOLDER": "Enter current password",
+        "NEW_PASS_INPUT": "New password",
+        "NEW_PASS_INPUT_PLACHOLDER": "Enter new password",
+        "PHONE_INPUT": "Phone number",
+        "PHONE_INPUT_PLACHOLDER": "Enter phone number",
+        "EMAIL_INPUT": "Email",
+        "EMAIL_INPUT_PLACHOLDER": "Enter email",
+        "FIRST_NAME_INPUT": "First name",
+        "FIRST_NAME_INPUT_PLACHOLDER": "Enter first name",
+        "LAST_NAME_INPUT": "Last name",
+        "LAST_NAME_INPUT_PLACHOLDER": "Enter last name",
+        "PATRONYMIC_INPUT": "Patronymic",
+        "PATRONYMIC_INPUT_PLACHOLDER": "Enter patronymic",
+        "ABOUT_TEXTAREA": "About yourself",
+        "ABOUT_TEXTAREA_PLACHOLDER": "Enter information about yourself",
+        "UPLOAD_AVATAR": "Upload avatar",
+        "DELETE_AVATAR": "Delete avatar",
+        "SAVE_BUT": "Save changes",
+        "LOG_OUT_BUT": "Log out",
+        "PRIVATE_DATA": "Private data",
+        "PUBLIC_DATA": "Public data"
+    },
+    "MENU": {
+        "HEADER": {
+            "HOME": "Home",
+            "CHATS": "Chats",
+            "SETTINGS": "Settings"
+        }
+    },
+    "HOME": {
+        "MY_CHATS": "My active chats",
+        "MY_CONTACTS": "My contacts",
+        "FRIENDS": "Friends",
+        "SUBSCRIPTIONS": "Subscriptions",
+        "SUBSCRIBERS": "Subscribers",
+        "CHAT_INPUT": "Chat",
+        "CHAT_INPUT_PLACHOLDER": "Enter first name, login or phone number",
+        "CONTACT_INPUT": "Contact",
+        "CONTACT_INPUT_PLACHOLDER": "Enter first name, login or phone number",
+        "FRIENDS_NOT_FOUND": "Friends not found",
+        "SUBSCRIPTIONS_NOT_FOUND": "Subscriptions not found",
+        "SUBSCRIBERS_NOT_FOUND": "Subscribers not found",
+        "CHATS_NOT_FOUND": "Chats not found",
+        "MESSAGE_YOUR": "You: {{text}}",
+        "MESSAGE_TO_YOU": "To you: {{text}}",
+        "MESSAGES_EMPTY": "Start a conversation"
+    },
+    "CHATS": {
+        "CONTACT_INPUT": "Contact",
+        "CONTACT_INPUT_PLACHOLDER": "Enter first name, login or phone number"
+    },
+    "CHAT": {
+        "MESSAGE_INPUT": "Message",
+        "MESSAGE_INPUT_PLACHOLDER": "Enter message",
+        "SEND_BTN": "Send",
+        "CONTACT_NOT_FOUND": "Contact not found",
+        "ADD_BTN": "Add",
+        "DELETE_BTN": "Delete",
+        "CANCEL_BTN": "Cancel",
+        "CONFIRM_BTN": "Confirm",
+        "BLOCK_BTN": "Block"
+    },
+    "CHAT_LIST": {
+        "CONTACT_INPUT": "Contact",
+        "CONTACT_INPUT_PLACHOLDER": "Enter first name, login or phone number",
+        "FRIENDS": "Friends",
+        "SUBSCRIPTIONS": "Subscriptions",
+        "SUBSCRIBERS": "Subscribers",
+        "FRIENDS_NOT_FOUND": "Friends not found",
+        "SUBSCRIPTIONS_NOT_FOUND": "Subscriptions not found",
+        "SUBSCRIBERS_NOT_FOUND": "Subscribers not found",
+        "SEARCH_NOT_FOUND": "New contacts not found",
+        "SEARCH_HINT": "To search for new contacts, enter more than 2 characters",
+        "SEARCH": "Determination results",
+        "SELECT_CONTACT": "Start a conversation by selecting a contact",
+        "MESSAGE_YOUR": "You:",
+        "MESSAGE_TO_YOU": "To you:",
+        "MESSAGES_EMPTY": "Start a conversation"
+    },
+    "ONLINE": {
+        "TRUE": "Online",
+        "FALSE": "Offline"
+    }
+}

@@ -1,0 +1,94 @@
+<section 
+  class="card hover"
+  [ngClass]="{
+    'card-s': size === 's',
+    'card-m': size === 'm',
+    'light-gray': backgroundColor === 'light_gray',
+    'dark-gray': backgroundColor === 'dark_gray',
+  }"
+>
+  <div
+    class="contact"
+    [ngClass]="{'contact-m': size === 'm'}"
+  >
+    <ui-avatar
+      [ngClass]="{
+          'contact-icon-s': size === 's',
+          'contact-icon-m': size === 'm',
+      }"
+      [src]="contact ? contact.avatarBase64 : null"
+      size="xxl"
+      [round]="true"
+    />
+
+    @if (size === 'm') {
+      <div class="contact-conection">
+        <div class="contact-conection-item">
+          <img src="/assets/icons/phone-icon.svg">
+          <span>{{ contact ? contact.phone : '' }}</span>
+        </div>
+        <div class="contact-conection-item">
+          <img src="/assets/icons/email-icon.svg">
+          <span>{{ contact ? contact.email : '' }}</span> 
+        </div>
+      </div>
+    }
+  </div>
+
+  <div
+    class="contact-info"
+    [ngClass]="{
+      'contact-info-s': size === 's',
+      'contact-info-m': size === 'm',
+    }"
+  >
+    <div class="contact-info-container">
+      <div class="contact-info-data" tuiFade>
+        @if (size === 'm') {
+          <div class="contact-info-data-row">
+            <h2>{{ isFio ? ContactFLP : contact ? contact.firstName : "" }}</h2>
+            @if (isBadge && contact) {
+              @if (contact.online) {
+                <ui-badge statusColor="online">{{ "ONLINE.TRUE" | translate }}</ui-badge>
+              } @else {
+                <ui-badge statusColor="offline">{{ "ONLINE.FALSE" | translate }}</ui-badge>
+              }
+            }
+          </div>
+        }
+        @if (size === 's') {
+          <div class="contact-info-data-row">
+            <h3>{{ isFio ? ContactFLP : contact ? contact.firstName : "" }}</h3>
+            @if (isBadge && contact) {
+              @if (contact.online) {
+                <ui-badge statusColor="online">{{ "ONLINE.TRUE" | translate }}</ui-badge>
+              } @else {
+                <ui-badge statusColor="offline">{{ "ONLINE.FALSE" | translate }}</ui-badge>
+              }
+            } 
+          </div>
+        }
+        @if (isLogin) {
+          <span class="contact-login">{{ contact ? contact.login : "" }}</span>
+        }
+      </div>
+
+      @if (isActions) {
+        <div class="action-container">
+          <ng-content select="[contact-action]" />
+        </div>
+      }
+    </div>
+
+    <ng-content select="[contact-content]" />
+  </div>
+
+  
+  @if (!!messageCount) {
+    <span class="badge">{{ messageCount }}</span>
+  }
+
+  @if (isOnlineShow && IsWithStatus !== null) {
+    <span class="status" [class.online]="IsWithStatus"></span>
+  }
+</section>

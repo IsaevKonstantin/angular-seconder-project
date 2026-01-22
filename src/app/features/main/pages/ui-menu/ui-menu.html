@@ -1,0 +1,24 @@
+<ui-dropdown-menu>
+  <div menu-trigger class="menu-trigger">
+    <img src="/assets/icons/menu-icon.svg">
+    <span>{{ CurrentRouteLabel | translate }}</span>
+  </div>
+
+  <ng-container menu-items>
+    @for (item of items; track item.routerLink) {
+      <ui-button
+        tuiOption
+        uiDropdownClose
+        class="menu-button"
+        [appearance]="activeRoute === item.routerLink ? 'primary' : 'outline'"
+        [routerLink]="item.routerLink"
+        (click)="closeMenu()"
+      >
+        <div class="menu-item">
+          <img [src]="item.icon">
+          <span>{{ item.label | translate }}</span>
+        </div>
+      </ui-button>
+    }
+  </ng-container>
+</ui-dropdown-menu>

@@ -1,0 +1,167 @@
+@let userData = user();
+<ui-user-card
+  class="user-card"
+  [user]="userData"
+/>
+
+<section class="contacts-layout">
+    <section class="card-contacts">
+        <div class="card-header">
+            <ui-input
+                icon="assets/icons/user-search-icon.svg"
+                [isCleaner]="true"
+                size="m"
+                [label]="'CHAT_LIST.CONTACT_INPUT' | translate"
+                [placeholder]="'CHAT_LIST.CONTACT_INPUT_PLACHOLDER' | translate"
+                [inputControl]="chatsControl"
+            />
+        </div>
+
+        <div class="scrollbar-container">
+            <ui-scrollbar>
+                <div class="list">
+                    @if (isContactsLoading()) {
+                        <ui-spinner></ui-spinner>
+                    } @else {
+                        @let selected = selectedChat();
+                        @let friendsArr = friends();
+                        <ui-single-accordion
+                            [title]="'CHAT_LIST.FRIENDS' | translate"
+                            [isOpen]="!!friendsArr.length"
+                        >
+                            @if (friendsArr.length) {
+                                <div class="list-items">
+                                    @for (friend of friendsArr; track $index) {
+                                        <ui-contact-card
+                                            [contact]="friend"
+                                            [backgroundColor]="!!selected && selected.id === friend.id ? 'dark_gray' : 'light_gray'"
+                                            [isOnlineShow]="true"
+                                            [messageCount]="friend.unread"
+                                            (click)="openContact(friend)"
+                                        >
+                                            <div contact-content class="message" tuiFade>
+                                                @let message = lastMessageData(friend);
+                                                <span class="message-item">{{ message.key | translate:message.params }}</span>
+                                            </div>
+                                        </ui-contact-card>
+                                    }
+                                </div>
+                            } @else {
+                                <div class="not-found">
+                                    <span>{{ 'CHAT_LIST.FRIENDS_NOT_FOUND' | translate }}</span>
+                                </div>
+                            }
+                        </ui-single-accordion>
+
+                        @let subscriptionsArr = subscriptions();
+                        <ui-single-accordion
+                            [title]="'CHAT_LIST.SUBSCRIPTIONS' | translate"
+                            [isOpen]="!!subscriptionsArr.length"
+                        >
+                            @if (subscriptionsArr.length) {
+                                <div class="list-items">
+                                    @for (subscription of subscriptionsArr; track $index) {
+                                        <ui-contact-card
+                                            [contact]="subscription"
+                                            [backgroundColor]="!!selected && selected.id === subscription.id ? 'dark_gray' : 'light_gray'"
+                                            [isOnlineShow]="true"
+                                            [messageCount]="subscription.unread"
+                                            (click)="openContact(subscription)"
+                                        >
+                                            <div contact-content class="message" tuiFade>
+                                                @let message = lastMessageData(subscription);
+                                                <span class="message-item">{{ message.key | translate:message.params }}</span>
+                                            </div>
+                                        </ui-contact-card>
+                                    }
+                                </div>
+                            } @else {
+                                <div class="not-found">
+                                    <span>{{ 'CHAT_LIST.SUBSCRIPTIONS_NOT_FOUND' | translate }}</span>
+                                </div>
+                            }
+                        </ui-single-accordion>
+
+                        @let subscribersArr = subscribers();
+                        <ui-single-accordion
+                            [title]="'CHAT_LIST.SUBSCRIBERS' | translate"
+                            [isOpen]="!!subscribersArr.length"
+                        >
+                            @if (subscribersArr.length) {
+                                <div class="list-items">
+                                    @for (subscribe of subscribersArr; track $index) {
+                                        <ui-contact-card
+                                            [contact]="subscribe"
+                                            [backgroundColor]="!!selected && selected.id === subscribe.id ? 'dark_gray' : 'light_gray'"
+                                            [isOnlineShow]="true"
+                                            [messageCount]="subscribe.unread"
+                                            (click)="openContact(subscribe)"
+                                        >
+                                            <div contact-content class="message" tuiFade>
+                                                @let message = lastMessageData(subscribe);
+                                                <span class="message-item">{{ message.key | translate:message.params }}</span>
+                                            </div>
+                                        </ui-contact-card>
+                                    }
+                                </div>
+                            } @else {
+                                <div class="not-found">
+                                    <span>{{ 'CHAT_LIST.SUBSCRIBERS_NOT_FOUND' | translate }}</span>
+                                </div>
+                            }
+                        </ui-single-accordion>
+
+                        @let searchContactsArr = searchContacts();
+                        @let searchValue = chatsControl.value;
+                        <ui-single-accordion
+                            [title]="'CHAT_LIST.SEARCH' | translate"
+                            [isOpen]="!!searchContactsArr.length"
+                        >
+                            @if (isSearchLoading()) {
+                                <ui-spinner></ui-spinner>
+                            } @else if (searchContactsArr.length) {
+                                <div class="list-items">
+                                    @for (contact of searchContactsArr; track $index) {
+                                        <ui-contact-card
+                                            [contact]="contact"
+                                            [backgroundColor]="!!selected && selected.id === contact.id ? 'dark_gray' : 'light_gray'"
+                                            [isOnlineShow]="true"
+                                            [messageCount]="contact.unread"
+                                            (click)="openContact(contact)"
+                                        >
+                                            <div contact-content class="message" tuiFade>
+                                                @let message = lastMessageData(contact);
+                                                <span class="message-item">{{ message.key | translate:message.params }}</span>
+                                            </div>
+                                        </ui-contact-card>
+                                    }
+                                </div>
+                            } @else {
+                                <div class="not-found">
+                                    <span>
+                                        @if (!!searchValue && searchValue.length >= 3) {
+                                            {{ 'CHAT_LIST.SEARCH_NOT_FOUND' | translate }}
+                                        } @else {
+                                            {{ 'CHAT_LIST.SEARCH_HINT' | translate }}
+                                        }
+                                    </span>
+                                </div>
+                            }
+                        </ui-single-accordion>
+                    }
+                </div>
+            </ui-scrollbar>
+        </div>
+    </section>
+
+    <div class="contact-details">
+        <router-outlet />
+
+        @if (!selectedChat()) {
+            <div class="empty-chat">
+                <img class="empty-chat-icon" src="/assets/icons/chats-icon.svg">
+                <h3>{{ "CHAT_LIST.SELECT_CONTACT" | translate }}</h3>
+            </div>
+        }
+    </div>
+</section>

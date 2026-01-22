@@ -1,0 +1,18 @@
+<ui-button
+  [appearance]="appearance"
+  [tuiDropdown]="dropdown"
+  [tuiDropdownOffset]="offset"
+  [tuiDropdownDirection]="verticalDirection"
+  [tuiDropdownAlign]="horizontalDirection"
+  [tuiDropdownLimitWidth]="width"
+  [tuiDropdownSided]="sided"
+  [(tuiDropdownOpen)]="isOpen"
+>
+  <ng-content select="[menu-trigger]"></ng-content>
+
+  <ng-template #dropdown>
+    <tui-data-list>
+      <ng-content select="[menu-items]"></ng-content>
+    </tui-data-list>
+  </ng-template>
+</ui-button>

@@ -1,0 +1,35 @@
+<div class="container">
+    <ui-avatar
+        class="avatar"
+        [src]="contact ? contact.avatarBase64 : null"
+        size="xxl"
+    />
+
+    <div class="info">
+        <div class="info-items">
+            <h2>{{ contact ? contact.lastName + " " + contact.firstName + " " + contact.patronymic : "" }}</h2>
+            @if (contact.online) {
+                <ui-badge statusColor="online">{{ "ONLINE.TRUE" | translate }}</ui-badge>
+            } @else {
+                <ui-badge statusColor="offline">{{ "ONLINE.FALSE" | translate }}</ui-badge>
+            }
+        </div>
+        <span class="info-items info-login">{{ contact ? contact.login : "" }}</span>
+
+        <div class="info-items">
+            <img src="/assets/icons/phone-icon.svg">
+            <span>{{ contact ? contact.phone : '' }}</span>
+        </div>
+
+        <div class="info-items">
+            <img src="/assets/icons/email-icon.svg">
+            <span>{{ contact ? contact.email : '' }}</span> 
+        </div>
+    </div>
+
+    @if (contact && contact.about) {
+        <div class="info-about">
+            <span>{{ contact && contact.about ? contact.about : "" }}</span>
+        </div>
+    }
+</div>

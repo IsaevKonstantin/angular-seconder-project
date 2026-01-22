@@ -1,0 +1,6 @@
+<tui-accordion [size]="size">
+    <button [tuiAccordion]="isOpen">{{ title }}</button>
+    <tui-expand>
+        <ng-content />
+    </tui-expand>
+</tui-accordion>

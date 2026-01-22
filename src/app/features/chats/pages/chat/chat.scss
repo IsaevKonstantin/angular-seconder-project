@@ -1,0 +1,125 @@
+@use "../../../../shared/styles/colors.scss" as *;
+
+:host {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.chat {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        background: $bg-card;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+        height: calc(100% - 89px);
+        width: calc(100% - 22px);
+        padding: 10px;
+        border: 1px solid $border-light;
+    }
+
+    &-messages {
+        flex: 1;
+        padding: 16px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &-input {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: calc(100% - 24px);
+        padding: 10px 10px 0px 10px;
+        border-top: 1px solid $card-separator;
+    }
+}
+
+.message {
+    max-width: 70%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: $light-gray;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow-wrap: anywhere;
+
+    small {
+        font-size: 10px;
+        color: #999;
+        align-self: flex-end;
+    }
+
+    &-mine {
+        align-self: flex-end;
+        background: $dark-gray;
+    }
+
+    &-text {
+        color: black;
+    }
+}
+
+.card {
+    &-action {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &-btn {
+        height: 40px;
+    }
+
+    &-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 20px;
+    }
+}
+
+.drawer {
+    &-header {
+        padding: 15px !important;
+        height: 20px;
+        background: #e9f0f9 !important;
+    }
+
+    &-close-btn {
+        height: 20px;
+        width: 20px;
+    }
+}
+
+.not-found {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ui-input {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+ui-button {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    height: 40px;
+}

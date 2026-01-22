@@ -1,0 +1,127 @@
+{
+    "TITLE": "СЕКУНДАНТ",
+    "LOGIN": {
+        "HEADER": "Авторизация",
+        "LOG_INPUT": "Логин",
+        "LOG_INPUT_PLACHOLDER": "Введите логин",
+        "PASS_INPUT": "Пароль",
+        "PASS_INPUT_PLACHOLDER": "Введите пароль",
+        "SIGN_BUT": "Войти",
+        "REG_BUT": "Регистрация"
+    },
+    "REGISTER": {
+        "HEADER": "Регистрация",
+        "LOG_INPUT": "Логин",
+        "LOG_INPUT_PLACHOLDER": "Введите логин",
+        "PASS_INPUT": "Пароль",
+        "PASS_INPUT_PLACHOLDER": "Введите пароль",
+        "PHONE_INPUT": "Телефон",
+        "PHONE_INPUT_PLACHOLDER": "Введите телефон",
+        "EMAIL_INPUT": "Почта",
+        "EMAIL_INPUT_PLACHOLDER": "Введите почту",
+        "FIRST_NAME_INPUT": "Имя",
+        "FIRST_NAME_INPUT_PLACHOLDER": "Введите имя",
+        "LAST_NAME_INPUT": "Фамилия",
+        "LAST_NAME_INPUT_PLACHOLDER": "Введите фамилию",
+        "PATRONYMIC_INPUT": "Отчеcтво",
+        "PATRONYMIC_INPUT_PLACHOLDER": "Введите отчеcтво",
+        "SIGN_BUT": "Вернуться к авторизации",
+        "REG_BUT": "Зарегистрироваться"
+    },
+    "PASSWOR_INPUT": {
+        "SHOW_TEXT": "Показать",
+        "HIDE_TEXT": "Скрыть"
+    },
+    "NOT_FOUND": {
+        "HEADER": "Страница не найдена",
+        "TEXT": "Возможно, страница была удалена, переименована или вы ввели неверный адрес",
+        "GO_HOME_BUT": "На главную"
+    },
+    "SETTINGS": {
+        "LOG_INPUT": "Логин",
+        "LOG_INPUT_PLACHOLDER": "Введите логин",
+        "CURRENT_PASS_INPUT": "Текущий пароль",
+        "CURRENT_PASS_INPUT_PLACHOLDER": "Введите текущий пароль",
+        "NEW_PASS_INPUT": "Новый пароль",
+        "NEW_PASS_INPUT_PLACHOLDER": "Введите новый пароль",
+        "PHONE_INPUT": "Телефон",
+        "PHONE_INPUT_PLACHOLDER": "Введите телефон",
+        "EMAIL_INPUT": "Почта",
+        "EMAIL_INPUT_PLACHOLDER": "Введите почту",
+        "FIRST_NAME_INPUT": "Имя",
+        "FIRST_NAME_INPUT_PLACHOLDER": "Введите имя",
+        "LAST_NAME_INPUT": "Фамилия",
+        "LAST_NAME_INPUT_PLACHOLDER": "Введите фамилию",
+        "PATRONYMIC_INPUT": "Отчеcтво",
+        "PATRONYMIC_INPUT_PLACHOLDER": "Введите отчеcтво",
+        "ABOUT_TEXTAREA": "О себе",
+        "ABOUT_TEXTAREA_PLACHOLDER": "Введите информацию о себе",
+        "UPLOAD_AVATAR": "Загрузить аватарку",
+        "DELETE_AVATAR": "Удалить аватарку",
+        "SAVE_BUT": "Сохранить изменения",
+        "LOG_OUT_BUT": "Выйти",
+        "PRIVATE_DATA": "Приватные данные",
+        "PUBLIC_DATA": "Публичные данные"
+    },
+    "MENU": {
+        "HEADER": {
+            "HOME": "Главная",
+            "CHATS": "Чаты",
+            "SETTINGS": "Настройки"
+        }
+    },
+    "HOME": {
+        "MY_CHATS": "Мои текущие чаты",
+        "MY_CONTACTS": "Мои контакты",
+        "FRIENDS": "Друзья",
+        "SUBSCRIPTIONS": "Подписки",
+        "SUBSCRIBERS": "Подписчики",
+        "CHAT_INPUT": "Чат",
+        "CHAT_INPUT_PLACHOLDER": "Введите имя, логин или телефон",
+        "CONTACT_INPUT": "Контакт",
+        "CONTACT_INPUT_PLACHOLDER": "Введите имя, логин или телефон",
+        "FRIENDS_NOT_FOUND": "Друзья не найдены",
+        "SUBSCRIPTIONS_NOT_FOUND": "Подписки не найдены",
+        "SUBSCRIBERS_NOT_FOUND": "Подписчики не найдены",
+        "CHATS_NOT_FOUND": "Чаты не найдены",
+        "MESSAGE_YOUR": "Вы: {{text}}",
+        "MESSAGE_TO_YOU": "Вам: {{text}}",
+        "MESSAGES_EMPTY": "Начните беседу"
+    },
+    "CHATS": {
+        "CONTACT_INPUT": "Контакт",
+        "CONTACT_INPUT_PLACHOLDER": "Введите имя, логин или телефон"
+    },
+    "CHAT": {
+        "MESSAGE_INPUT": "Сообщение",
+        "MESSAGE_INPUT_PLACHOLDER": "Введите сообщение",
+        "SEND_BTN": "Отправить",
+        "CONTACT_NOT_FOUND": "Контакт не найден",
+        "ADD_BTN": "Добавить",
+        "DELETE_BTN": "Удалить",
+        "CANCEL_BTN": "Отменить",
+        "CONFIRM_BTN": "Подтвердить",
+        "BLOCK_BTN": "Заблокировать"
+    },
+    "CHAT_LIST": {
+        "CONTACT_INPUT": "Контакт",
+        "CONTACT_INPUT_PLACHOLDER": "Введите имя, логин или телефон",
+        "FRIENDS": "Друзья",
+        "SUBSCRIPTIONS": "Подписки",
+        "SUBSCRIBERS": "Подписчики",
+        "FRIENDS_NOT_FOUND": "Друзья не найдены",
+        "SUBSCRIPTIONS_NOT_FOUND": "Подписки не найдены",
+        "SUBSCRIBERS_NOT_FOUND": "Подписчики не найдены",
+        "SEARCH_NOT_FOUND": "Новые контакты не найдены",
+        "SEARCH_HINT": "Для поиска новых контактов введите более 2-х символов",
+        "SEARCH": "Результаты поиска",
+        "SELECT_CONTACT": "Начните общение, выбрав контакт",
+        "MESSAGE_YOUR": "Вы:",
+        "MESSAGE_TO_YOU": "Вам:",
+        "MESSAGES_EMPTY": "Начните беседу"
+    },
+    "ONLINE": {
+        "TRUE": "Онлайн",
+        "FALSE": "Оффлайн"
+    }
+}

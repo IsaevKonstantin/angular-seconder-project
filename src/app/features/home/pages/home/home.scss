@@ -1,0 +1,116 @@
+@use "../../../../shared/styles/colors.scss" as *;
+
+:host {
+  height: 100%;
+  width: calc(100% + 14px);
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.scrollbar {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 14px);
+  gap: 12px;
+}
+
+.card {
+  width: calc(100% - 34px);
+  background: $bg-card;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  border: 1px solid $border-light;
+
+  &-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  &-about {
+    height: 100%;
+    width: calc(100% - 15px);
+  }
+
+  &-about-container {
+    height: 110px;
+    width: 100%;
+    border-top: 1px solid $card-separator;
+  }
+
+  &-about-content {
+    width: calc(100% + 15px);
+    height: 100%;
+  }
+
+  &-action {
+    width: 30px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.message {
+  display: flex;
+  gap: 5px;
+
+  &-item {
+    white-space: nowrap;
+    color: $text-secondary;
+  }
+}
+
+.user-card {
+  width: 100%;
+}
+
+.not-found {
+  height: 64px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  &-item {
+    width: 200px;
+  }
+}
+
+.drawer {
+  &-header {
+    position: sticky;
+    align-items: end;
+    padding: 10px !important;
+    background: $bg-page !important;
+  }
+
+  &-close-btn {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+h3 {
+  margin: 0;
+}

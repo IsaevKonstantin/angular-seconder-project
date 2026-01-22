@@ -1,0 +1,11 @@
+@use "../../../shared/styles/colors.scss" as *;
+
+.status{
+  &-online {
+    background: $status-online;
+  }
+
+  &-offline {
+    background: $status-offline;
+  }
+}

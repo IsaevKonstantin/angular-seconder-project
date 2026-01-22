@@ -1,0 +1,10 @@
+<tui-textfield [tuiTextfieldSize]="size" [tuiTextfieldCleaner]="isCleaner">
+    <label tuiLabel>{{ label }}</label>
+    <input
+        autocomplete="tel"
+        mask="+7 ### ###-##-##"
+        tuiInputPhone
+        [placeholder]="placeholder"
+        [formControl]="inputControl"
+    />
+</tui-textfield>
